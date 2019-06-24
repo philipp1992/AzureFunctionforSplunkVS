@@ -132,7 +132,7 @@ namespace AzureFunctionForSplunk
         {
             // if user has not configured a cert, anything goes
             if (string.IsNullOrWhiteSpace(splunkCertThumbprint))
-                return true;
+                return false;
 
             // if user has configured a cert, must match
             var thumbprint = cert.GetCertHashString();
