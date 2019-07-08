@@ -131,7 +131,7 @@ namespace AzureFunctionForSplunk
         public static bool ValidateMyCert(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors sslErr)
         {      
 
-            return true;
+            return false;
         }
 
         public static async Task obProxy(List<string> standardizedEvents, ILogger log)
