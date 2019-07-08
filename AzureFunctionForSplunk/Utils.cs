@@ -129,17 +129,9 @@ namespace AzureFunctionForSplunk
         }
 
         public static bool ValidateMyCert(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors sslErr)
-        {
-            // if user has not configured a cert, anything goes
-            if (string.IsNullOrWhiteSpace(splunkCertThumbprint))
-                return false;
+        {      
 
-            // if user has configured a cert, must match
-            var thumbprint = cert.GetCertHashString();
-            if (thumbprint == splunkCertThumbprint)
-                return true;
-
-            return false;
+            return true;
         }
 
         public static async Task obProxy(List<string> standardizedEvents, ILogger log)
